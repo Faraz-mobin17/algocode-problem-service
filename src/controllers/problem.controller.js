@@ -30,7 +30,9 @@ function deleteProblem(req, res) {
 }
 
 function updateProblem(req, res) {
-  return res.status(501).json({ message: "not implemented" });
+  return res
+    .status(StatusCodes.NOT_IMPLEMENTED)
+    .json({ message: "not implemented" });
 }
 
 module.exports = {
