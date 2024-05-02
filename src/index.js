@@ -14,6 +14,7 @@ app.get("/ping", (req, res) => {
   return res.json({ message: "Problem service is alive" });
 });
 
+// if any request will comes to this router map that requrest to api router
 app.use("/api", apiRouter);
 
 app.listen(PORT, () => console.log(`Server started at PORT ${PORT}`));
