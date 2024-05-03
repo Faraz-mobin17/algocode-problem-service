@@ -30,7 +30,18 @@ async function addProblem(req, res, next) {
   }
 }
 
-async function getProblem(req, res, next) {}
+async function getProblem(req, res, next) {
+  try {
+    const problem = await problemService.getProblem(req.params.id);
+    return res
+      .status(StatusCodes.OK)
+      .json(
+        new ApiResponse(StatusCodes.OK, "Successfully fetch problem", problem),
+      );
+  } catch (error) {
+    next(error);
+  }
+}
 
 async function getProblems(req, res, next) {
   try {

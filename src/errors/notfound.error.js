@@ -1,7 +1,7 @@
 const BaseError = require("./base.error");
 const { StatusCodes } = require("http-status-codes");
 
-class NotFound extends BaseError {
+class NotFoundError extends BaseError {
   constructor(resourceName, resourceValue) {
     super(
       "NotFound",
@@ -10,9 +10,9 @@ class NotFound extends BaseError {
       {
         resourceName,
         resourceValue,
-      }
+      },
     );
   }
 }
 
-module.exports = NotFound;
+module.exports = NotFoundError;
