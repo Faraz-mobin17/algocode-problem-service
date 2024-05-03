@@ -30,16 +30,23 @@ async function addProblem(req, res, next) {
   }
 }
 
-function getProblem(req, res, next) {
-  return res
-    .status(StatusCodes.NOT_IMPLEMENTED)
-    .json({ message: "not implemented" });
-}
+async function getProblem(req, res, next) {}
 
-function getProblems(req, res, next) {
-  return res
-    .status(StatusCodes.NOT_IMPLEMENTED)
-    .json({ message: "not implemented" });
+async function getProblems(req, res, next) {
+  try {
+    const response = await problemService.getAllProblems();
+    return res
+      .status(StatusCodes.OK)
+      .json(
+        new ApiResponse(
+          StatusCodes.OK,
+          "Successfully fetched all problems",
+          response,
+        ),
+      );
+  } catch (error) {
+    throw error;
+  }
 }
 
 function deleteProblem(req, res, next) {
