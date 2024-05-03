@@ -60,13 +60,23 @@ async function getProblems(req, res, next) {
   }
 }
 
-function deleteProblem(req, res, next) {
-  return res
-    .status(StatusCodes.NOT_IMPLEMENTED)
-    .json({ message: "not implemented" });
+async function deleteProblem(req, res, next) {
+  try {
+    const deletedProblem = await problemService.deleteProblem(req.params.id);
+    return res
+      .status(StatusCodes.OK)
+      .json(
+        new ApiResponse(
+          StatusCodes.OK,
+          "Successfully Deleted Problem",
+          deletedProblem,
+        ),
+      );
+  } catch (error) {
+    next(error);
+  }
 }
-
-function updateProblem(req, res, next) {
+async function updateProblem(req, res, next) {
   return res
     .status(StatusCodes.NOT_IMPLEMENTED)
     .json({ message: "not implemented" });
