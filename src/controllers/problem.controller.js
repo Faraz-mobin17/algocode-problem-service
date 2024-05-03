@@ -12,30 +12,27 @@ function addProblem(req, res, next) {
   } catch (error) {
     next(error);
   }
-  // return res
-  //   .status(StatusCodes.NOT_IMPLEMENTED)
-  //   .json({ message: "not implemented" });
 }
 
-function getProblem(req, res) {
+function getProblem(req, res, next) {
   return res
     .status(StatusCodes.NOT_IMPLEMENTED)
     .json({ message: "not implemented" });
 }
 
-function getProblems(req, res) {
+function getProblems(req, res, next) {
   return res
     .status(StatusCodes.NOT_IMPLEMENTED)
     .json({ message: "not implemented" });
 }
 
-function deleteProblem(req, res) {
+function deleteProblem(req, res, next) {
   return res
     .status(StatusCodes.NOT_IMPLEMENTED)
     .json({ message: "not implemented" });
 }
 
-function updateProblem(req, res) {
+function updateProblem(req, res, next) {
   return res
     .status(StatusCodes.NOT_IMPLEMENTED)
     .json({ message: "not implemented" });
