@@ -3,9 +3,19 @@ const errorHandler = require("./utils/errorHandler.utils");
 const { PORT } = require("./config/server.config");
 const connectDB = require("./config/db.config");
 const morgan = require("morgan");
+const cors = require("cors");
+
 const app = express();
+
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+  }),
+);
+
 app.use(morgan("dev"));
-app.use(express.json());
+app.use(express.json({ limit: "16kb" }));
 app.use(express.text());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
