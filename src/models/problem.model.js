@@ -14,7 +14,7 @@ const ProblemSchema = new Schema({
     type: String,
     enum: ["Easy", "Medium", "Hard"],
     required: [true, "Difficulty cannot be empty"],
-    default: "easy",
+    default: "Easy",
   },
   testCases: [
     {

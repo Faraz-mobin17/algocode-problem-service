@@ -13,15 +13,17 @@ function pingProblemController(req, res) {
 
 async function addProblem(req, res, next) {
   try {
+    console.log("incoming request body");
     const newproblem = await problemService.createProblem(req.body);
+    console.log("Reached in problem controller");
     return res
       .status(StatusCodes.CREATED)
       .json(
         new ApiResponse(
           StatusCodes.CREATED,
           "Successfully create a problem",
-          newproblem
-        )
+          newproblem,
+        ),
       );
   } catch (error) {
     next(error);

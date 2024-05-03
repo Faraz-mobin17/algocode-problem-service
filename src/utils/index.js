@@ -1,4 +1,4 @@
 module.exports = {
   markdownSanitizer: require("./markdownSanitizer.utils"),
-  ApiReponse: require("./ApiResponse.utils"),
+  ApiResponse: require("./ApiResponse.utils"),
 };
